@@ -16,7 +16,7 @@ public class PizzaRepository {
     private RedisTemplate<String,Object> template;
 
     public void save(Order o) {
-        template.opsForValue().set(o.getOrderId(), o.toJSoN().toString());
+        template.opsForValue().set(o.getOrderId(), o.toJSON().toString());
     }
 
     public Optional<Order> get(String orderId) {

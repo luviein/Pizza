@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body data-th-object="${order}">
+    <table>
+        <tr>
+            <td>
+                Order Id:
+            </td>
+            <!--1st order id is created in this html 2nd orderId assi-->
+            <td><a data-th-href="@{/order/{orderId}(orderId=*{orderId})}" data-th-text="*{orderId}"></a></td>
+        </tr>
+
+        <tr>
+            <td>Address: </td>
+            <td><span data-th-text="*{address}"></span></td>
+        </tr>
+        <tr>
+            <td>Pizza Cost: </td>
+            <td><span data-th-text="${order.getPizzaCost()}"></span></td>
+        </tr>
+        <tr>
+            <td>Is rush: </td>
+            <td><span data-th-text="${order.getRush()} ?  '$2'"></span></td>
+        </tr>
+        <tr>
+            <td>Total Cost: </td>
+            <td><span data-th-text="${order.getTotalCost()}"></span></td>
+        </tr>
+
+    </table>
+</body>
+</html>

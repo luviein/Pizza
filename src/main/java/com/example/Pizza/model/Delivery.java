@@ -2,11 +2,6 @@ package com.example.Pizza.model;
 
 import java.io.Serializable;
 
-import org.json.JSONObject;
-
-import com.google.gson.JsonObject;
-
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

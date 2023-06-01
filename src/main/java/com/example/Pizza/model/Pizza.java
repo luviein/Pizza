@@ -39,9 +39,9 @@ public class Pizza implements Serializable {
 
     public static Pizza create(JsonObject o) {
         Pizza p = new Pizza();
-        p.setPizza(o.getString("pizza)"));
-        p.setSize(o.getString("size)"));
-        p.setQuantity(o.getInt("quantity)"));
+        p.setPizza(o.getString("pizza"));
+        p.setSize(o.getString("size"));
+        p.setQuantity(o.getInt("quantity"));
 
         return p;
     }
