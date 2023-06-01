@@ -4,7 +4,6 @@ package com.example.Pizza.config;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties.Jedis;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -28,8 +27,8 @@ public class RedisConfig {
     @Value("${spring.data.redis.password}")
     private String redisPassword;
     
-
-    @Bean
+    //when autowire redis template have to specify pizza
+    @Bean("pizza")
     @Scope("singleton") //single object throughout the memory
     public RedisTemplate<String, Object> redisTemplate(){
         final RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
